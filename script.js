@@ -1,6 +1,7 @@
 const myLibrary = [];
 
 function Book(title, author, pages){
+    this.id = crypto.randomUUID()
     this.title = title ;
     this.author = author;
     this.pages = pages;
@@ -8,12 +9,19 @@ function Book(title, author, pages){
 
 function addBookToLibrary() {
     const dialog =  document.querySelector("#dialog")
-    dialog.show()
-    const title = prompt("Enter the title");
-    const author = prompt("Enter the author")
-    const pages = prompt("Enter pages"); 
-    const book = new Book(title, author, pages)
-    createBookCard(book); 
+    const formElement = document.querySelector("#form")
+    dialog.showModal()
+    formElement.addEventListener('submit', function(event){
+        event.preventDefault();
+        const formElement = event.target
+        const formData = new FormData(formElement);
+        console.log("title"+formData.get('title'))
+        const book = new Book(formData.get('title'), formData.get('author'), formData.get('pages'))
+        createBookCard(book);
+        myLibrary.push(book)
+        document.querySelector("#dialog").close()
+     })
+     console.log(myLibrary)
 }
 
 function createBookCard(book){

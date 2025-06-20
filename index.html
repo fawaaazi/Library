@@ -31,14 +31,14 @@
     </footer>
     <dialog id="dialog">
         <div id="form-container">
-            <form action="\">
+            <form action="\" id="form">
                 <h3>Add a new book</h3>
-                <input type="text" class="modal-input" name="" id="" placeholder="Title" required maxlength="20">
-                <input type="text" class="modal-input" name="" id="" placeholder="Author" required maxlength="20">
-                <input type="number" class="modal-input" name="" id="" placeholder="Pages" required>
+                <input type="text" class="modal-input" name="title" id="title" placeholder="Title" required maxlength="20">
+                <input type="text" class="modal-input" name="author" id="author" placeholder="Author" required maxlength="20">
+                <input type="number" class="modal-input" name="pages" id="pages" placeholder="Pages" required>
                 <div id="read-check">
-                    <label for="checkbox">Have you read it?</label>
-                    <input type="checkbox" name="" id="">
+                    <label for="read">Have you read it?</label>
+                    <input type="checkbox" name="read" id="read">
                 </div>
                 <button class="modal-input" id="submit-btn" type="submit">Submit</button>
             </form>

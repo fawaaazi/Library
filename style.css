@@ -220,11 +220,15 @@ footer .container{
 
 #dialog{
   position: absolute;
-  top: 25%; 
+  top: 10%; 
   border: 0;
   border-radius: var(--spacing-sm);
   transition: 0.2s ease-in-out;
+}
 
+#dialog::backdrop{
+  background-color: var(--black);
+  opacity: 60%;
 }
 
 #form-container{
