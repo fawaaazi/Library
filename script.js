@@ -7,11 +7,13 @@ function Book(title, author, pages){
 }
 
 function addBookToLibrary() {
+    const dialog =  document.querySelector("#dialog")
+    dialog.show()
     const title = prompt("Enter the title");
     const author = prompt("Enter the author")
-    const pages = prompt("Enter pages");
+    const pages = prompt("Enter pages"); 
     const book = new Book(title, author, pages)
-    createBookCard(book);
+    createBookCard(book); 
 }
 
 function createBookCard(book){
