@@ -20,12 +20,12 @@ formElement.addEventListener('submit', function(event){
         const book = new Book(formData.get('title'), formData.get('author'), formData.get('pages'))
         createBookCard(book);
         myLibrary.push(book)
+        dialog.close();
      })
 
 function addBookToLibrary() {
     dialog.showModal()
     console.log(myLibrary)
-    dialog.close();
 }
 
 /* DOM manipulation for the creation of the book card */
