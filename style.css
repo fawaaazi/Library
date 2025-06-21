@@ -216,7 +216,7 @@ main .container{
 #read-btn{
   appearance: none;
   background-color: var(--light-green);
-  border: 2px solid var(--light-green);
+  border: 2px solid var(--white);
   border-radius: 15px;
   box-sizing: border-box;
   color: var(--black);
