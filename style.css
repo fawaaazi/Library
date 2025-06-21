@@ -213,7 +213,7 @@ main .container{
     justify-content: center;
 }
 
-#read{
+#read-btn{
   appearance: none;
   background-color: var(--light-green);
   border: 2px solid var(--light-green);
@@ -241,18 +241,18 @@ main .container{
   will-change: transform;
 }
 
-#read:hover {
+#read-btn:hover {
   background-color: var(--light-green);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
 
-#read:active {
+#read-btn:active {
   box-shadow: none;
   transform: translateY(0);
 }
 
-#remove{
+#remove-btn{
   appearance: none;
   background-color: var(--grey);
   border: 2px solid transparent;
@@ -280,14 +280,14 @@ main .container{
   will-change: transform;
 }
 
-#remove:hover {
+#remove-btn:hover {
   color: #fff;
   background-color: var(--red);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
 
-#remove:active {
+#remove-btn:active {
   box-shadow: none;
   transform: translateY(0);
 }
