@@ -51,9 +51,9 @@ function createBookCard(book){
     
     /* assigning class name & id */
     btnDiv.className = "card-btn"
-    readBtn.id = "read-btn"
+    readBtn.className = "read-btn"
     removeBtn.id = "remove-btn"
-    readBtn.value = book.id
+    readBtn.id = "b"+myLibrary.length
     bookCard.className = "book-card"
    
     
@@ -63,7 +63,7 @@ function createBookCard(book){
     author.textContent = book.author
     removeBtn.textContent = "Remove"
     removeBtn.setAttribute("onclick", "removeCard(this.id)");
-    readBtn.setAttribute("onclick", "readOrNot(this.value)");
+    readBtn.setAttribute("onclick", "readOrNot(this.id)");
 
     /* checking whether book readed or not */
     if(book.read){
@@ -94,9 +94,11 @@ function removeCard(btnId){
 }
 
 function readOrNot(bookId){
-    const btn = document.querySelector("#read-btn")
+    const btn = document.querySelector("#"+bookId)
     /*const bookId = btn.parentNode.parentNode.id*/
-    const bookIndex = myLibrary.findIndex(book => book.id === bookId)
+    /*const bookIndex = myLibrary.findIndex(book => book.id === bookId)*/
+    const bookIndex = bookId[1];
+    console.log(bookId[1])
     if(bookIndex !== -1){
         myLibrary[bookIndex].read = !myLibrary[bookIndex].read;
            console.log(myLibrary[bookIndex])
