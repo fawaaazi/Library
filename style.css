@@ -213,7 +213,7 @@ main .container{
     justify-content: center;
 }
 
-#read-btn{
+.read-btn{
   appearance: none;
   background-color: var(--light-green);
   border: 2px solid var(--white);
@@ -241,18 +241,18 @@ main .container{
   will-change: transform;
 }
 
-#read-btn:hover {
+.read-btn:hover {
   background-color: var(--light-green);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
 
-#read-btn:active {
+.read-btn:active {
   box-shadow: none;
   transform: translateY(0);
 }
 
-#remove-btn{
+.remove-btn{
   appearance: none;
   background-color: var(--grey);
   border: 2px solid transparent;
@@ -280,14 +280,14 @@ main .container{
   will-change: transform;
 }
 
-#remove-btn:hover {
+.remove-btn:hover {
   color: #fff;
   background-color: var(--red);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
 
-#remove-btn:active {
+.remove-btn:active {
   box-shadow: none;
   transform: translateY(0);
 }
@@ -350,7 +350,7 @@ form input::placeholder{
     font-weight: 600;
     line-height: 1.2;
 }
-#read-check{
+.read-check{
   display: flex;
   justify-content: space-around;
   align-items: center;

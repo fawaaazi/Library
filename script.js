@@ -28,13 +28,14 @@ formElement.addEventListener('submit', function(event){
                             );
         createBookCard(book);
         myLibrary.push(book)
+        console.log(myLibrary)
         dialog.close();
 })
 
 
 function addBookToLibrary() {
     dialog.showModal()
-    console.log(myLibrary)
+   
 }
 
 /* DOM manipulation for the creation of the book card */
@@ -51,10 +52,13 @@ function createBookCard(book){
     
     /* assigning class name & id */
     btnDiv.className = "card-btn"
-    readBtn.id = "read-btn"
-    removeBtn.id = "remove-btn"
+    readBtn.className = "read-btn"
+    removeBtn.className = "remove-btn"
+    readBtn.id = "btnRead"+myLibrary.length /*giving unique id for every readBtn*/
+    removeBtn.id = "btnRemove"+myLibrary.length /*giving unique id for every removeBtn*/
     bookCard.className = "book-card"
-    bookCard.id = book.id;
+    bookCard.id = book.id
+   
     
     /* giving text contents */
     title.textContent = book.title
@@ -88,14 +92,24 @@ function createBookCard(book){
 
 function removeCard(btnId){
     const btn = document.querySelector("#"+btnId)
-    btn.parentNode.parentNode.remove()
-    console.log(btn)
+    const bookCard = btn.parentNode.parentNode
+    const bookId = bookCard.id;
+    const bookIndex = myLibrary.findIndex(book => book.id === bookId);
+    console.log(myLibrary[bookIndex])
+   if(bookIndex !== -1){
+        myLibrary.splice(bookIndex,1)
+        
+    }
+    console.log(myLibrary)
+    bookCard.remove()
 }
 
 function readOrNot(btnId){
     const btn = document.querySelector("#"+btnId)
-    const bookId = btn.parentNode.parentNode.id
+    const bookId = btn.parentNode.parentNode.id; /* accessing the id of the book*/
     const bookIndex = myLibrary.findIndex(book => book.id === bookId)
+    /*const bookIndex = bookId.slice(1); /*accessing the index value id which has "b" infront*/
+    console.log(bookIndex)
     if(bookIndex !== -1){
         myLibrary[bookIndex].read = !myLibrary[bookIndex].read;
            console.log(myLibrary[bookIndex])
