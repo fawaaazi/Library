@@ -28,13 +28,14 @@ formElement.addEventListener('submit', function(event){
                             );
         createBookCard(book);
         myLibrary.push(book)
+        console.log(myLibrary)
         dialog.close();
 })
 
 
 function addBookToLibrary() {
     dialog.showModal()
-    console.log(myLibrary)
+   
 }
 
 /* DOM manipulation for the creation of the book card */
@@ -52,8 +53,9 @@ function createBookCard(book){
     /* assigning class name & id */
     btnDiv.className = "card-btn"
     readBtn.className = "read-btn"
-    removeBtn.id = "remove-btn"
-    readBtn.id = "b"+myLibrary.length /*giving unique id for every readBtn*/
+    removeBtn.className = "remove-btn"
+    readBtn.id = "btnRead"+myLibrary.length /*giving unique id for every readBtn*/
+    removeBtn.id = "btnRemove"+myLibrary.length /*giving unique id for every removeBtn*/
     bookCard.className = "book-card"
     bookCard.id = book.id
    
@@ -90,8 +92,16 @@ function createBookCard(book){
 
 function removeCard(btnId){
     const btn = document.querySelector("#"+btnId)
-    btn.parentNode.parentNode.remove()
-    console.log(btn)
+    const bookCard = btn.parentNode.parentNode
+    const bookId = bookCard.id;
+    const bookIndex = myLibrary.findIndex(book => book.id === bookId);
+    console.log(myLibrary[bookIndex])
+   if(bookIndex !== -1){
+        myLibrary.splice(bookIndex,1)
+        
+    }
+    console.log(myLibrary)
+    bookCard.remove()
 }
 
 function readOrNot(btnId){

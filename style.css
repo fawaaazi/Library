@@ -252,7 +252,7 @@ main .container{
   transform: translateY(0);
 }
 
-#remove-btn{
+.remove-btn{
   appearance: none;
   background-color: var(--grey);
   border: 2px solid transparent;
@@ -280,14 +280,14 @@ main .container{
   will-change: transform;
 }
 
-#remove-btn:hover {
+.remove-btn:hover {
   color: #fff;
   background-color: var(--red);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
 
-#remove-btn:active {
+.remove-btn:active {
   box-shadow: none;
   transform: translateY(0);
 }
