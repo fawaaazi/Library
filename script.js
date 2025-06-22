@@ -53,8 +53,9 @@ function createBookCard(book){
     btnDiv.className = "card-btn"
     readBtn.className = "read-btn"
     removeBtn.id = "remove-btn"
-    readBtn.id = "b"+myLibrary.length
+    readBtn.id = "b"+myLibrary.length /*giving unique id for every readBtn*/
     bookCard.className = "book-card"
+    bookCard.id = book.id
    
     
     /* giving text contents */
@@ -93,12 +94,12 @@ function removeCard(btnId){
     console.log(btn)
 }
 
-function readOrNot(bookId){
-    const btn = document.querySelector("#"+bookId)
-    /*const bookId = btn.parentNode.parentNode.id*/
-    /*const bookIndex = myLibrary.findIndex(book => book.id === bookId)*/
-    const bookIndex = bookId[1];
-    console.log(bookId[1])
+function readOrNot(btnId){
+    const btn = document.querySelector("#"+btnId)
+    const bookId = btn.parentNode.parentNode.id; /* accessing the id of the book*/
+    const bookIndex = myLibrary.findIndex(book => book.id === bookId)
+    /*const bookIndex = bookId.slice(1); /*accessing the index value id which has "b" infront*/
+    console.log(bookIndex)
     if(bookIndex !== -1){
         myLibrary[bookIndex].read = !myLibrary[bookIndex].read;
            console.log(myLibrary[bookIndex])
